@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Listing_01",
+            "request": "launch",
+            "mainClass": "Listing_01"
+        }
+    ]
+}
