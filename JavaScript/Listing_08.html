@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Listing_08</title>
+</head>
+<body>
+    <script>
+        let count = 0;
+
+        async function clicked() {
+            let current = await increaseCounter();
+            document.getElementById("counter").innerHTML = `${current}`;
+        }
+
+        function increaseCounter() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve(++count);
+                }, 2000);
+            });
+        }
+
+    </script>
+    <p id="counter">Noch nicht geklickt</p>
+    <p>
+        <button id="button" text="Click" onclick="clicked()">Click!</button>
+    </p>
+</body>
+</html>

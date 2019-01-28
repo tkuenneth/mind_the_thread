@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Listing_07</title>
+</head>
+<body>
+    <script>
+        let count = 0;
+
+        function clicked() {
+            document.getElementById("counter").innerHTML = `${increaseCounter()}`;
+        }
+
+        function increaseCounter() {
+            var wakeupTime = new Date().getTime() + 2000;
+            while (new Date().getTime() < wakeupTime);
+            return ++count;
+        }
+
+    </script>
+    <p id="counter">Noch nicht geklickt</p>
+    <p>
+        <button id="button" text="Click" onclick="clicked()">Click!</button>
+    </p>
+</body>
+</html>
