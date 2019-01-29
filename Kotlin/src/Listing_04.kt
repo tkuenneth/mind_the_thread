@@ -1,16 +1,16 @@
 import kotlinx.coroutines.*
 
 fun main() = runBlocking {
-    val j1 = async { fibonacciCoroutine(40) }
+    val j1 = async { calcFibonacci(40) }
     println("1")
-    val j2 = async { fibonacciCoroutine(45) }
+    val j2 = async { calcFibonacci(45) }
     println("2")
     println("fib(40) = ${j1.await()}")
     println("fib(45) = ${j2.await()}")
     println("Fertig")
 }
 
-suspend fun fibonacciCoroutine(n: Int) = withContext(Dispatchers.Default) {
+suspend fun calcFibonacci(n: Int) = withContext(Dispatchers.Default) {
     println("Berechne fib($n)")
     fibonacci(n)
 }
