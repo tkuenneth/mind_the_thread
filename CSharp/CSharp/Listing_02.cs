@@ -8,9 +8,9 @@ namespace CSharp
         static void Main(string[] args)
         {
             Task t1 = FibonacciTask(40);
-            Task t2 = FibonacciTask(45);
             t1.Start();
             Console.WriteLine("1");
+            Task t2 = FibonacciTask(45);
             t2.Start();
             Console.WriteLine("2");
             Task.WaitAll(new Task[] { t1, t2 });
