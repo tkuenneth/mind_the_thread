@@ -1,0 +1,11 @@
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+
+fun main() = runBlocking<Unit> {
+    print("Hello, ")
+    launch {
+        delay(1000L)
+        println("World!")
+    }
+}
