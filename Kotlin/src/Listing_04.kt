@@ -1,5 +1,8 @@
 import kotlinx.coroutines.*
 
+// This file belongs to my article
+// "Mind the thread - Wie aktuelle Programmiersprachen mit Nebenläufigkeit umgehen"
+// inweb & mobile Developer 4.2019, S.110 ff.
 fun main() = runBlocking {
     val j1 = async { calcFibonacci(40) }
     println("1")
