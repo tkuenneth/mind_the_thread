@@ -1,17 +1,14 @@
-import kotlin.system.measureTimeMillis
-
 fun main() {
-    println("Took ${measureTimeMillis {
-        for (i in 40..43) {
-            println("fib($i) = ${fib(i)}")
-        }
-    }} ms")
+    val fibs = fibList(10)
+    for (i in (1..fibs.size)) {
+        println("fib($i) = ${fibs[i - 1]}")
+    }
 }
 
-fun fib(i: Int): Int {
-    return if (i <= 2) {
-        1
-    } else {
-        fib(i - 1) + fib(i - 2)
+fun fibList(n: Int): List<Int> {
+    val result: MutableList<Int> = ArrayList()
+    for (i in (1..n)) {
+        result.add(if (i <= 2) 1 else result[i - 2] + result[i - 3])
     }
+    return result
 }
