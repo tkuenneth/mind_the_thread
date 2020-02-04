@@ -51,9 +51,7 @@ public class BadButtonDemo extends JFrame {
             }
             while (i != Integer.MAX_VALUE / 3);
             final int ii = i;
-            SwingUtilities.invokeLater(() -> {
-                result.setText(Integer.toString(ii));
-            });
+            SwingUtilities.invokeLater(() -> result.setText(Integer.toString(ii)));
         }).start();
     }
 
