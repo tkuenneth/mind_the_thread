@@ -14,6 +14,7 @@
                     document.getElementById("message").innerHTML = this.responseText;
                 }
             };
+            // just change false to true to make it good :-)
             request.open('GET', 'http://127.0.0.1:8080/hello/10000', false);
             document.getElementById("message").innerHTML = "waiting";
             request.send();
