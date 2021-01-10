@@ -8,13 +8,12 @@
     <script>
 
         function clicked() {
-            document.getElementById("button").disabled = true;
-            fetch("http://127.0.0.1:8080/hello/5000")
+            fetch("http://127.0.0.1:8080/hello/10000")
                 .then(function (response) {
                     return response.text();
                 })
                 .then(function (text) {
-                    document.getElementById("counter").innerHTML = text;
+                    document.getElementById("message").innerHTML = text;
                 })
                 .catch(function (error) {
                     console.log("Error: " + error);
@@ -22,13 +21,15 @@
                 .finally(function () {
                     document.getElementById("button").disabled = false;
                 });
+                document.getElementById("message").innerHTML = "waiting";
+                document.getElementById("button").disabled = true;
         }
 
     </script>
     <p>
         <button id="button" text="Click" onclick="clicked()">Click!</button>
     </p>
-    <p id="counter">Noch nicht geklickt</p>
+    <p id="message">Not clicked</p>
 </body>
 
 </html>
