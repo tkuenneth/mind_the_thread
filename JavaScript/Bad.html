@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>Bad</title>
+</head>
+
+<body>
+    <script>
+
+        function clicked() {
+            let request = new XMLHttpRequest();
+            request.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("message").innerHTML = this.responseText;
+                }
+            };
+            request.open('GET', 'http://127.0.0.1:8080/hello/10000', false);
+            document.getElementById("message").innerHTML = "waiting";
+            request.send();
+        }
+
+    </script>
+    <p>
+        <button id="button" text="Click" onclick="clicked()">Click!</button>
+    </p>
+    <p id="message">Not clicked</p>
+</body>
+
+</html>
