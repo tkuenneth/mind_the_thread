@@ -6,7 +6,7 @@ import kotlinx.coroutines.runBlocking
 fun main() {
     print("Hello, ")
     val job = GlobalScope.launch {
-        delay(1000L)
+        delay(3000L)
         println("World!")
     }
     runBlocking {
