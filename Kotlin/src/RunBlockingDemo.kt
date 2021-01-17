@@ -5,7 +5,7 @@ import kotlinx.coroutines.runBlocking
 fun main() = runBlocking<Unit> {
     print("Hello, ")
     launch {
-        delay(1000L)
+        delay(3000L)
         println("World!")
     }
 }
