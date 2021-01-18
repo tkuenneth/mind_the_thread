@@ -1,10 +1,7 @@
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.*
 
 fun main() = runBlocking {
-    val deferred = GlobalScope.async {
+    val deferred: Deferred<Unit> = GlobalScope.async {
         println("Started")
         delay(1000)
         throw IllegalArgumentException("I want to crash")
