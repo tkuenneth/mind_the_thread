@@ -1,7 +1,7 @@
-import kotlinx.coroutines.runBlocking
 import java.awt.BorderLayout
 import java.awt.EventQueue.invokeLater
 import java.net.URL
+import java.util.concurrent.CompletableFuture
 import javax.swing.JButton
 import javax.swing.JFrame
 import javax.swing.JLabel
@@ -15,13 +15,15 @@ fun main() {
         val button = JButton("Click!")
         button.addActionListener {
             label.text = "waiting"
-            val result = runBlocking {
+            val future = CompletableFuture.supplyAsync {
                 URL("http://127.0.0.1:8080/hello/10000")
                         .openStream()
                         .bufferedReader()
                         .use { it.readText() }
             }
-            label.text = result
+            future.thenAccept {
+                label.text = it
+            }
         }
         frame.contentPane.add(button, BorderLayout.SOUTH)
         frame.pack()
